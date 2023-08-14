@@ -1,0 +1,441 @@
+/* src/App.css */
+:root {
+  --primary-bg: #ffffff;       /* Light Grayish Background */
+  --secondary-bg: #ffffff;     /* White Secondary Background */
+  --accent: #8a4cff;           /* Vibrant Purple Accent Color */
+  --header-bg: #ffffff;        /* White Header Background */
+  --text-dark: #333333;        /* Dark Text Color */
+  --text-light: #ffffff;       /* White Text Color */
+  --hover-accent: #7539b0;     /* Hover Color for Active Items */
+  --button-bg: #8a4cff;        /* Vibrant Purple Button Background */
+  --button-text: #ffffff;      /* White Button Text Color */
+  --glow-color: rgba(138, 76, 255, 0.5); /* Purple Glow Color */
+}
+
+
+@font-face {
+  font-family: 'Header';
+  src: url('/public/images/Helvetica Neue Medium Extended.ttf') format('truetype'); /* Adjust the path to the font file */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Text';
+  src: url('/public/images/SF.otf') format('opentype'); /* Adjust the path to the font file */
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Text', sans-serif;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #171516, #171516);
+  height: auto;
+}
+
+.nav-list .active {
+  color: var(--hover-accent);
+
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  border-bottom-left-radius:25px ;
+  font-family: 'Text', sans-serif;
+  z-index: 5000;
+  border-bottom-right-radius:25px ;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.logo {
+  width: 70px;
+  height: auto;
+}
+
+.App-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row; /* Default to row layout */
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 2;
+  padding: 10px;
+}
+
+&.open {
+  flex-direction: column; /* Change to column layout when menu is open */
+  align-items: flex-end;
+}
+
+
+.menu-toggle {
+  display: none; /* Hide the menu toggle by default */
+  flex-direction: column;
+  align-items: flex-end;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-light);
+  margin: 3px 0;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-end; /* Align links to the right */
+  margin-right: 20px;}
+
+.nav-list.open {
+  display: block; /* Show the menu links when the menu is open */
+
+}
+
+.nav-list.open li {
+  margin: 0px 15px; /* Adjust spacing for menu links */
+}
+
+.nav-list li {
+  margin: 5px 15px;
+
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: var(--text-light);
+  transition: color 0.3s;
+  font-weight: 200;
+}
+
+.nav-list a:hover {
+  color: var(--accent);
+
+}
+
+.nav-button {
+  font-weight: 600;
+  padding: 13px 20px;
+  background-color: var(--accent);
+  color: var(--button-text);  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+  margin-right: 10px;
+  text-shadow: 0 0 20px var(--glow-color);
+}
+
+.nav-button:hover {
+  background-color: var(--secondary-bg);
+  color: var(--accent);}
+/* Home.css */
+.social-media-form.open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 300ms, visibility 0ms; /* Reset visibility transition delay */
+  background-color: #080808e0;
+
+}
+
+/* About.css */
+/* About.css */
+.about-section {
+  padding: 80px 0;
+  text-align: center;
+  margin-top: 225px;
+}
+
+.about-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: var(--text-light);
+  font-family: header, sans-serif;
+
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-image-container {
+  flex: 1;
+  text-align: center;
+}
+
+.profile-image-frame {
+  width: 250px;
+  height: 250px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+  width: 100%;
+  max-width: 200px; /* Add this line */
+  height: auto;
+  border-radius: 50%;
+}
+
+.about-text-container {
+  flex: 2;
+  text-align: left;
+  padding: 0 40px;
+}
+
+.about-introduction {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffffe7;
+  margin-bottom: 20px;
+}
+
+
+.about-call-to-action {
+  font-size: 20px;
+  font-style: italic;
+  color: #ffffffb2;
+  margin-top: 40px;
+}
+
+.about-introduction,
+.about-call-to-action {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.about-section.animate .about-introduction,
+.about-section.animate .about-call-to-action {
+  opacity: 1;
+  transform: translateY(0);
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.text {
+  color: var(--text-light);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.typing-animation span {
+  display: inline-block;
+  animation: typing 4s steps(40, end);
+}
+
+
+@media (max-width: 768px) {
+
+
+  .menu-toggle {
+    display: flex; /* Show the menu toggle on smaller screens */
+  }
+
+  .nav-list {
+    display: none; /* Hide the nav-list on smaller screens */
+    flex-direction: column; /* Stack links vertically */
+    margin-right: 0px ;
+  }
+
+  .App-nav.open .nav-list {
+    display: block; /* Show the menu links when the menu is open */
+  }
+
+  .social-media-form {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms, visibility 0ms 300ms; /* Delay the visibility change */
+    color: var(--text-light);
+  }
+  
+  .social-media-form.open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 300ms, visibility 0ms; /* Reset visibility transition delay */
+    background-color: #080808e0;
+
+  }
+  
+  .App-nav.open .nav-button {
+    margin-right: 10px; /* Adjust margin for spacing when menu is open */
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Align items to the right */
+    position: absolute;
+    top: 100%; /* Position below the menu button */
+    right: 50px;
+    background-color: #080808e0;
+    border-radius: 25px;
+    display: none; /* Hide by default */
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    
+  }
+  
+  .nav-menu.open {
+    display: flex; /* Show the menu when it's open */
+  }
+}
+
+.game-button {
+  color: var(--text-dark);
+  background-color: transparent;
+  font-weight: 600;
+  padding: 15px 50px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+  margin-right: 10px;
+}
+
+/* CSS for fade-in animation */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.20s ease-in-out;
+}
+
+.fade-in.loaded {
+  opacity: 1;
+}
+.social-media-form {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  right: -15px;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Add this to Nav.css */
+.social-media-form a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-media-form a:hover {
+  color: #8E24AA;
+}
+
+.social-media-form i {
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .profile-image-frame {
+    margin: 20px 0;
+  }
+  
+  .about-text-container {
+    padding: 20px;
+  }
+  
+  .about-title {
+    font-size: 28px;
+  }
+  
+  .about-introduction {
+    font-size: 20px;
+  }
+  
+  .about-call-to-action {
+    font-size: 18px;
+  }
+}
+
+/* Apply the custom scrollbar to the entire page */
+body::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+/* Track styles */
+body::-webkit-scrollbar-track {
+  background: #1e003d; /* Dark Purple Background */
+}
+
+/* Thumb styles */
+body::-webkit-scrollbar-thumb {
+  background-color: #8a4cff; /* Vibrant Purple Color */
+  border-radius: 10px; /* Round thumb */
+}
+
+/* On hover, thumb gets slightly darker */
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #7539b0; /* Darker Purple on Hover */
+}
+
+/* Increase thumb size on hover */
+body::-webkit-scrollbar-thumb:active {
+  background-color: #5c2c96; /* Even Darker Purple on Active */
+}
+
+/* Hide the scrollbar when not interacting */
+body::-webkit-scrollbar-thumb:inactive {
+  background-color: transparent;
+}
+

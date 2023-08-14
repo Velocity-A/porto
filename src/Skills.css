@@ -1,0 +1,271 @@
+/* src/components/Skills.css */
+.skills-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.skills-content {
+  max-width: 800px;
+  width: 100%;
+  padding: 40px;
+  background-color: #00000075;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skills-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color:var(--text-light);
+  font-family: 'header', sans-serif ;
+
+}
+
+.skills-list {
+  display: grid;
+  gap: 20px;
+}
+
+.skill {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  
+}
+
+.skill-name {
+  font-size: 18px;
+  font-weight: bold;
+  color:#fff;
+}
+
+.skill-progress {
+  font-size: 14px;
+  color: #666;
+}
+
+.skill-bar {
+  height: 8px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.skill-progress-bar {
+  height: 100%;
+  background-color: var(--button-bg);
+  border-radius: 5px;
+}
+
+.skill-description {
+  font-size: 14px;
+  color: #a3a3a3;
+  font-family:'Text', sans-serif;
+  font-weight: 500;
+  margin-top: 25px;
+}
+
+/* Circular Progress Bar Styles */
+
+.circle-chart {
+  position: relative;
+  width: 100px; /* Adjust the size of the circle chart */
+  height: 100px; /* Adjust the size of the circle chart */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circular-chart {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.circle-bg,
+.circle-progress {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.circle-bg {
+  stroke: #e1e1e1;
+}
+
+.circle-progress {
+  stroke: var(--button-bg); /* Adjust the color as needed */
+  transition: stroke-dashoffset 0.3s;
+  transform-origin: center;
+  stroke-dasharray: 0, 100;
+}
+
+.skill-icon {
+  width: 60%; /* Adjust the size of the skill icons */
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes drawAnimationUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drawAnimationLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes drawAnimationRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply animations to specific skills */
+.skill:nth-child(odd) {
+  animation: drawAnimationUp 0.6s ease-in-out forwards;
+}
+
+.skill:nth-child(even) {
+  animation: drawAnimationLeft 0.6s ease-in-out forwards;
+}
+
+.skill:nth-child(3n) {
+  animation: drawAnimationRight 0.6s ease-in-out forwards;
+}
+
+.skill {
+  /* ... Your existing styles */
+  opacity: 0;
+  transform: translateY(20px); /* Start with a slight offset */
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.skill.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* src/components/Skills.css */
+.skills-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.skills-content {
+  max-width: 800px;
+  width: 100%;
+  padding: 40px;
+  background-color: #00000075;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skills-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--text-light);
+  font-family: 'header', sans-serif;
+}
+
+.skills-list {
+  display: grid;
+  gap: 20px;
+}
+
+.skill {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.skill.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Rest of the CSS styles for circular progress, animations, etc. */
+
